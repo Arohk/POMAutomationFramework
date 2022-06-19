@@ -4,9 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.DefaultPage;
 import pages.HomePage;
 import pages.LoginModal;
@@ -20,7 +18,7 @@ public class BaseTests {
     LoginModal loginModal;
     HomePage homePage;
 
-    @BeforeTest
+    @BeforeMethod
     public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
@@ -30,7 +28,7 @@ public class BaseTests {
         homePage = new HomePage(driver);
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown() {
         driver.quit();
     }
