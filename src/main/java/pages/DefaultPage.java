@@ -9,14 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * The page that is open after the URL is hit.
  */
-public class DefaultPage {
+public class DefaultPage extends BasePage{
 
-    WebDriver driver;
-
-    // constructor
     public DefaultPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     // Locators
@@ -27,7 +23,7 @@ public class DefaultPage {
     WebElement signInButton;
 
 
-    // Methods
+    // Interaction Methods
     public void clickLoginButton(){
         loginButton.click();
     }
@@ -35,4 +31,7 @@ public class DefaultPage {
     public void clickSignInButton() {
         signInButton.click();
     }
+
+    // Assertions Methods
+
 }

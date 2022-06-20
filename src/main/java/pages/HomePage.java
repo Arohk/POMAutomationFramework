@@ -8,13 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 /**
  * The page that the user is after he has been logged in.
  */
-public class HomePage {
-
-    WebDriver driver;
+public class HomePage extends BasePage{
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     // Locators using PageFactory
@@ -26,7 +23,7 @@ public class HomePage {
 
     // Interaction Methods
 
-    // Assertion Methods
+    // boolean methods used in TestNG test assertions
     public boolean isNewPostButtonDisplayed() {
         return newPostButton.isDisplayed();
     }
